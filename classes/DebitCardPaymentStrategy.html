@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>atm_martinezvargas documentation</title>
+        <title>payment_martinezvargas documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -64,7 +64,7 @@
 
         <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
                <div class="d-flex">
-                    <a href="../" class="navbar-brand">atm_martinezvargas documentation</a>
+                    <a href="../" class="navbar-brand">payment_martinezvargas documentation</a>
                     <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
                </div>
         </div>
@@ -95,7 +95,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Classes</li>
-  <li class="breadcrumb-item" >DepositCommand</li>
+  <li class="breadcrumb-item" >DebitCardPaymentStrategy</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -119,7 +119,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>libs/domain/src/deposit-command.ts</code>
+            <code>libs/domain/src/debit-card-payment-strategy.ts</code>
         </p>
 
 
@@ -129,7 +129,7 @@
                 <h3>Implements</h3>
             </p>
             <p class="comment">
-                            <code><a href="../interfaces/ICommand.html" target="_self" >ICommand</a></code>
+                            <code><a href="../interfaces/IPaymentStrategy.html" target="_self" >IPaymentStrategy</a></code>
             </p>
 
 
@@ -137,23 +137,6 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#_account" >_account</a>
-                            </li>
-                            <li>
-                                <a href="#_amount" >_amount</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -164,7 +147,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#Execute" >Execute</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#Pay" >Pay</a>
                             </li>
                         </ul>
                     </td>
@@ -178,125 +162,7 @@
     </table>
 </section>
 
-            <section data-compodoc="block-constructor">
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(account: <a href="../classes/Account.html" target="_self">Account</a>, amount: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">libs/domain/src/deposit-command.ts:6</a></div>
-                            </td>
-                        </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>account</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../classes/Account.html" target="_self" >Account</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>amount</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
-
-            <section data-compodoc="block-properties">
-    
-    <h3 id="inputs">
-        Properties
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="_account"></a>
-                    <span class="name">
-                        <span ><b>_account</b></span>
-                        <a href="#_account"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../classes/Account.html" target="_self" >Account</a></code>
-
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">libs/domain/src/deposit-command.ts:5</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="_amount"></a>
-                    <span class="name">
-                        <span ><b>_amount</b></span>
-                        <a href="#_amount"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">libs/domain/src/deposit-command.ts:6</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-</section>
 
             <section data-compodoc="block-methods">
     
@@ -307,24 +173,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="Execute"></a>
+                    <a name="Pay"></a>
                     <span class="name">
-                        <span ><b>Execute</b></span>
-                        <a href="#Execute"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Public</span>
+                        <span ><b>Pay</b></span>
+                        <a href="#Pay"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>Execute()</code>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>Pay(amount: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="12"
-                                    class="link-to-prism">libs/domain/src/deposit-command.ts:12</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="3"
+                                    class="link-to-prism">libs/domain/src/debit-card-payment-strategy.ts:3</a></div>
                         </td>
                     </tr>
 
@@ -332,10 +200,40 @@
             <tr>
                 <td class="col-md-4">
 
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>amount</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                         </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -350,22 +248,13 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Account } from &#x27;./account&#x27;;
-import { ICommand } from &#x27;./icommand.interface&#x27;;
-
-export class DepositCommand implements ICommand {
-  _account: Account;
-  _amount: number;
-
-  constructor(account: Account, amount: number) {
-    this._account &#x3D; account;
-    this._amount &#x3D; amount;
-  }
-  Execute(): void {
-    this._account.Deposit(this._amount);
-  }
-}
-</code></pre>
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IPaymentStrategy } from &quot;./ipayment-strategy.interface&quot;;
+export class DebitCardPaymentStrategy implements IPaymentStrategy {
+    public Pay(amount: number): boolean {
+        console.info(&quot;Customer pays Rs &quot; + amount + &quot; using Debit Card&quot;);
+        return true;
+    }
+}</code></pre>
     </div>
 </div>
 
@@ -403,7 +292,7 @@ export class DepositCommand implements ICommand {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'DepositCommand.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'DebitCardPaymentStrategy.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

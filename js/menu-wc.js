@@ -15,7 +15,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
         <nav>
             <ul class="list">
                 <li class="title">
-                    <a href="index.html" data-type="index-link">atm_martinezvargas documentation</a>
+                    <a href="index.html" data-type="index-link">payment_martinezvargas documentation</a>
                 </li>
 
                 <li class="divider"></li>
@@ -114,16 +114,19 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
-                                <a href="classes/Account.html" data-type="entity-link" >Account</a>
+                                <a href="classes/CashPaymentStrategy.html" data-type="entity-link" >CashPaymentStrategy</a>
                             </li>
                             <li class="link">
-                                <a href="classes/ATM.html" data-type="entity-link" >ATM</a>
+                                <a href="classes/CreditCardPaymentStrategy.html" data-type="entity-link" >CreditCardPaymentStrategy</a>
                             </li>
                             <li class="link">
-                                <a href="classes/DepositCommand.html" data-type="entity-link" >DepositCommand</a>
+                                <a href="classes/DebitCardPaymentStrategy.html" data-type="entity-link" >DebitCardPaymentStrategy</a>
                             </li>
                             <li class="link">
-                                <a href="classes/WithdrawCommand.html" data-type="entity-link" >WithdrawCommand</a>
+                                <a href="classes/PaymentContext.html" data-type="entity-link" >PaymentContext</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/PaymentService.html" data-type="entity-link" >PaymentService</a>
                             </li>
                         </ul>
                     </li>
@@ -136,7 +139,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
-                                <a href="interfaces/ICommand.html" data-type="entity-link" >ICommand</a>
+                                <a href="interfaces/IPaymentStrategy.html" data-type="entity-link" >IPaymentStrategy</a>
                             </li>
                         </ul>
                     </li>
@@ -148,6 +151,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="miscellaneous-links"' : 'id="xs-miscellaneous-links"' }>
+                            <li class="link">
+                                <a href="miscellaneous/enumerations.html" data-type="entity-link">Enums</a>
+                            </li>
                             <li class="link">
                                 <a href="miscellaneous/functions.html" data-type="entity-link">Functions</a>
                             </li>
