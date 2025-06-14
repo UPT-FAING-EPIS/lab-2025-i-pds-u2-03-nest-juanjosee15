@@ -1,0 +1,54 @@
+name: Publish Documentation
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+ # ---- atm Project ----
+      - name: Install dependencies (atm)
+        run: |
+          cd atm
+          npm ci
+
+      - name: Generate documentation (atm)
+        run: |
+          cd atm
+          npx @compodoc/compodoc -p tsconfig.json -d documentation
+
+      - name: Deploy to GitHub Pages (atm)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./atm/documentation
+
+  # ---- payment Project ----
+
+      - name: Install dependencies (payment)
+        run: |
+          cd payment
+          npm ci
+
+      - name: Generate documentation (payment)
+        run: |
+          cd payment
+          npx @compodoc/compodoc -p tsconfig.json -d documentation
+
+      - name: Deploy to GitHub Pages (payment)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./payment/documentation

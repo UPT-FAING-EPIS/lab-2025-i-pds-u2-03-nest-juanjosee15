@@ -1,0 +1,56 @@
+name: Release Version
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+# ---- atm Project ----
+      - name: Install dependencies (atm)
+        run: |
+          cd atm
+          npm ci
+
+      - name: Build project (atm)
+        run: |
+          cd atm
+          npm run build
+
+      - name: Create GitHub Release (atm)
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+# ---- payment Project ----
+      - name: Install dependencies (payment)
+        run: |
+          cd payment
+          npm ci
+
+      - name: Build project (payment)
+        run: |
+          cd payment
+          npm run build
+
+      - name: Create GitHub Release (payment)
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

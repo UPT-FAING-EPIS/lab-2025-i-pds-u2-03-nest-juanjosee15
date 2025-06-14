@@ -1,0 +1,59 @@
+name: Package and Publish
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-test-analyze-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          registry-url: https://npm.pkg.github.com/
+
+      # ---- atm Project ----
+      - name: Install dependencies (atm)
+        run: |
+          cd atm
+          npm ci
+
+      - name: Run unit tests (atm)
+        run: |
+          cd atm
+          npm run test:cov
+
+      - name: Build and Publish Package (atm)
+        run: |
+          cd atm
+          npm version patch
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # ---- payment Project ----
+      - name: Install dependencies (payment)
+        run: |
+          cd payment
+          npm ci
+
+      - name: Run unit tests (payment)
+        run: |
+          cd payment
+          npm run test:cov
+
+      - name: Build and Publish Package (payment)
+        run: |
+          cd payment
+          npm version patch
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
